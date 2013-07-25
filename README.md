@@ -47,10 +47,12 @@ cd project-folder
 bundle
 ```
 
-Configure on login for your user:
+### Runing Manually
+
+The only way to run for now is manually:
 
 ```
-bundle exec rake setup:login
+bundle exec rake check
 ```
 
 Configuration
