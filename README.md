@@ -36,7 +36,12 @@ $ git clone https://github.com/leonardoobaptistaa/silvio-downloader.git
 
 ### Configure ./config/silvio-downloader.json
 
-Checkout configuration section
+```
+cd silvio-downloader
+cp config/silvio-downloader.json.sample config/silvio-downloader.json
+```
+
+Check configuration section to check whole json file
 
 ### Setup
 

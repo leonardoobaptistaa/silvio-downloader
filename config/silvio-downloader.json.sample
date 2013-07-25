@@ -1,5 +1,4 @@
 {
-  "file": "/Users/leonardobaptista/Documents/gitRepository/pessoal/silvio-downloader/config/silvio-downloader.json",
   "shows": [
     {
   "name": "Dexter",
@@ -15,9 +14,9 @@
 }
   ],
   "hour_interval": 1,
-  "download_path": "/home/leonardo/TvShows/",
-  "transmission_host": "192.168.1.99",
+  "download_path": "/home/user/TvShows/",
+  "transmission_host": "127.0.0.1",
   "transmission_port": "9091",
   "transmission_user": "user",
-  "transmission_password": "transmission"
+  "transmission_password": "password"
 }
