@@ -1,0 +1,52 @@
+require 'mechanize'
+module SilvioDownloader
+  class Show < JSONable
+    attr_accessor :name
+    attr_accessor :seasson
+    attr_accessor :episode
+    attr_accessor :quality
+
+    def quality_string
+      return self.quality == "HD" ? "720p" : "HDTV"
+    end
+
+    def next_episode_name
+      episode_name = "%.2d" % (self.episode + 1)
+      seasson_name = "%.2d" % self.seasson
+      "#{name} S#{seasson_name}E#{episode_name} #{quality_string}"
+    end
+
+    def next_seasson_name
+      seasson_name = "%.2d" % (self.seasson + 1)
+      "#{name} S#{seasson_name}E01 #{quality_string}"
+    end
+
+    #TODO: NEED TEST
+    def find_link(link)
+      agent = Mechanize.new 
+      agent.get(link)
+
+      best_link = agent.page.links_with(:href => /magnet/).first
+      return nil if best_link.nil?
+
+      best_link.href
+    end
+
+    def find_best_link_episode
+      find_link("http://thepiratebay.sx/search/#{next_episode_name}/0/7/208")
+    end
+
+    def find_best_link_seasson
+      find_link("http://thepiratebay.sx/search/#{next_seasson_name}/0/7/208")
+    end
+
+    def update_to_next_seasson
+      self.seasson += 1
+      self.episode =  1
+    end
+
+    def update_to_next_episode
+      self.episode += 1
+    end
+  end
+end

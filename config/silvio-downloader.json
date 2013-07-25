@@ -1,0 +1,23 @@
+{
+  "file": "/Users/leonardobaptista/Documents/gitRepository/pessoal/silvio-downloader/config/silvio-downloader.json",
+  "shows": [
+    {
+  "name": "Dexter",
+  "seasson": 8,
+  "episode": 4,
+  "quality": "HD"
+},
+    {
+  "name": "Suits",
+  "seasson": 3,
+  "episode": 2,
+  "quality": "HD"
+}
+  ],
+  "hour_interval": 1,
+  "download_path": "/home/leonardo/TvShows/",
+  "transmission_host": "192.168.1.99",
+  "transmission_port": "9091",
+  "transmission_user": "user",
+  "transmission_password": "transmission"
+}

@@ -1,0 +1,323 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+  <title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Search The Pirate Bay" />
+  <link rel="stylesheet" type="text/css" href="/static/css-new/pirate6.css"/>
+  <style type="text/css">
+    .searchBox{
+      margin: 6px;
+      width: 300px;
+      vertical-align: middle;
+      padding: 2px;
+            background-image:url('/static/img/icon-https.gif');
+            background-repeat:no-repeat;
+            background-position: right;
+    }
+
+    .detLink {
+      font-size: 1.2em;
+      font-weight: 400;
+    }
+    .detDesc {
+      color: #4e5456;
+    }
+    .detDesc a:hover {
+      color: #000099;
+      text-decoration: underline;
+    }
+    .sortby {
+      text-align: left;
+      float: left;
+    }
+    .detName {
+      padding-top: 3px;
+      padding-bottom: 2px;
+    }
+    .viewswitch {
+      font-style: normal;
+      float: right;
+      text-align: right;
+      font-weight: normal;
+    }
+  </style>
+  <script src="/static/js/tpb.js" type="text/javascript"></script>
+
+        <style type="text/css">
+    table#sponsoredLinks a { border: 0; }
+    table#sponsoredLinks a:hover { text-decoration: underline; }
+                table#sponsoredLinks td.downbut a {border: none;}
+                table#sponsoredLinks {min-width: 400px; text-align: left; width: 100%; margin: 0 0 10px 0; border-left: solid 1px #ffffff;}
+                table#sponsoredLinks th {padding: 7px; background-color: #D2B9A6;}
+    table#sponsoredLinks td {padding: 2px 4px; background-color: #F6F1EE; font-weight: bold; font-style: italic; text-align: right; white-space: nowrap;}
+                table#sponsoredLinks td img {border: 0;}
+                table#sponsoredLinks td.first {font-style: normal; text-align: left;}
+                table#sponsoredLinks td.first img {margin: 0 5px 0 0; vertical-align: -7px;}
+                table#sponsoredLinks tr:hover td {background-color: #FFFFFF;}
+                table#sponsoredLinks td.downbut {width: 170px;}
+        </style>
+
+  <script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>
+</head>
+
+<body>
+
+
+  <div id="header">
+
+
+    <div class="ad">
+     <iframe src="http://cdn2.adexprt.com/exo_na/top.html" width="468" height="60" frameborder="0" scrolling="no"></iframe>
+    </div>
+      <form method="get" id="q" action="/s/">
+      <a href="/" class="img"><img src="/static/img/tpblogo_sm_ny.gif" id="TPBlogo" alt="The Pirate Bay" /></a>
+      <b><a href="/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+      <a href="/browse" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
+      <a href="/recent" title="Recent Torrent">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+      <a href="/tv" title="TV shows">TV shows</a>&nbsp;&nbsp;|&nbsp;
+      <a href="/music" title="Music">Music</a>&nbsp;&nbsp;|&nbsp;
+      <a href="/top" title="Top 100">Top 100</a>
+      <br /><input type="search" class="inputbox" title="Pirate Search" name="q" placeholder="Search here..." value="dexter s08e04 720p" /><input value="Pirate Search" type="submit" class="submitbutton" /><br />     <label for="audio" title="Audio"><input id="audio" name="audio" onclick="javascript:rmAll();" type="checkbox"/>Audio</label>
+      <label for="video" title="Video"><input id="video" name="video" onclick="javascript:rmAll();" type="checkbox"/>Video</label>
+      <label for="apps" title="Applications"><input id="apps" name="apps" onclick="javascript:rmAll();" type="checkbox"/>Applications</label>
+      <label for="games" title="Games"><input id="games" name="games" onclick="javascript:rmAll();" type="checkbox"/>Games</label>
+      <label for="other" title="Other"><input id="other" name="other" onclick="javascript:rmAll();" type="checkbox"/>Other</label>
+
+      <select id="category" name="category" onchange="javascript:setAll();">
+                    <option value="0">All</option>
+        <optgroup label="Audio">
+          <option value="101">Music</option>
+          <option value="102">Audio books</option>
+          <option value="103">Sound clips</option>
+          <option value="104">FLAC</option>
+          <option value="199">Other</option>
+        </optgroup>
+        <optgroup label="Video">
+          <option value="201">Movies</option>
+          <option value="202">Movies DVDR</option>
+          <option value="203">Music videos</option>
+          <option value="204">Movie clips</option>
+          <option value="205">TV shows</option>
+          <option value="206">Handheld</option>
+          <option value="207">HD - Movies</option>
+          <option value="208" selected="selected">HD - TV shows</option>
+          <option value="209">3D</option>
+          <option value="299">Other</option>
+        </optgroup>
+        <optgroup label="Applications">
+          <option value="301">Windows</option>
+          <option value="302">Mac</option>
+          <option value="303">UNIX</option>
+          <option value="304">Handheld</option>
+          <option value="305">IOS (iPad/iPhone)</option>
+          <option value="306">Android</option>
+          <option value="399">Other OS</option>
+        </optgroup>
+        <optgroup label="Games">
+          <option value="401">PC</option>
+          <option value="402">Mac</option>
+          <option value="403">PSx</option>
+          <option value="404">XBOX360</option>
+          <option value="405">Wii</option>
+          <option value="406">Handheld</option>
+          <option value="407">IOS (iPad/iPhone)</option>
+          <option value="408">Android</option>
+          <option value="499">Other</option>
+        </optgroup>
+        <optgroup label="Other">
+          <option value="601">E-books</option>
+          <option value="602">Comics</option>
+          <option value="603">Pictures</option>
+          <option value="604">Covers</option>
+          <option value="605">Physibles</option>
+          <option value="699">Other</option>
+        </optgroup>
+      </select>
+
+      <input type="hidden" name="page" value="0" />
+      <input type="hidden" name="orderby" value="99" />
+    </form>
+  </div><!-- // div:header -->
+
+  <h2><span>Search results: dexter s08e04 720p</span>&nbsp;Displaying hits from 1 to 7 (approx 7 found)</h2>
+<div id="SearchResults"><div id="content">
+      <div id="sky-right">
+         <iframe src="http://cdn1.adexprt.com/exo_na/sky2.html" width="160" height="600" frameborder="0" scrolling="no" style="padding-top: 100px"></iframe>
+      </div>
+  <div id="main-content">
+
+     <iframe src="http://cdn1.adexprt.com/exo_na/center.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  <table id="searchResult">
+  <thead id="tableHead">
+    <tr class="header">
+      <th><a href="/search/dexter%20s08e04%20720p/0/13/208" title="Order by Type">Type</a></th>
+      <th><div class="sortby"><a href="/search/dexter%20s08e04%20720p/0/1/208" title="Order by Name">Name</a> (Order by: <a href="/search/dexter%20s08e04%20720p/0/3/208" title="Order by Uploaded">Uploaded</a>, <a href="/search/dexter%20s08e04%20720p/0/5/208" title="Order by Size">Size</a>, <span style="white-space: nowrap;"><a href="/search/dexter%20s08e04%20720p/0/11/208" title="Order by ULed by">ULed by</a></span>, <a href="/search/dexter%20s08e04%20720p/0/8/208" title="Order by Seeders">SE</a>, <a href="/search/dexter%20s08e04%20720p/0/9/208" title="Order by Leechers">LE</a>)</div><div class="viewswitch"> View: <a href="/switchview.php?view=s">Single</a> / Double&nbsp;</div></th>
+      <th><abbr title="Seeders"><a href="/search/dexter%20s08e04%20720p/0/8/208" title="Order by Seeders">SE</a></abbr></th>
+      <th><abbr title="Leechers"><a href="/search/dexter%20s08e04%20720p/0/9/208" title="Order by Leechers">LE</a></abbr></th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8723806/Dexter_S08E04_720p_HDTV_x264-EVOLVE_[eztv]" class="detLink" title="Details for Dexter S08E04 720p HDTV x264-EVOLVE [eztv]">Dexter S08E04 720p HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:afeca4c382e3cf1029defe1bbd87ed9faaf84c0e&dn=Dexter+S08E04+720p+HDTV+x264-EVOLVE+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 6 comments." title="This torrent has 6 comments." /><a href="/user/eztv"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+      <font class="detDesc">Uploaded 07-22&nbsp;05:22, Size 1.14&nbsp;GiB, ULed by <a class="detDesc" href="/user/eztv/" title="Browse eztv">eztv</a></font>
+    </td>
+    <td align="right">9296</td>
+    <td align="right">2242</td>
+  </tr>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8723602/Dexter.S08E04.720p.HDTV.x264-EVOLVE_[PublicHD]" class="detLink" title="Details for Dexter.S08E04.720p.HDTV.x264-EVOLVE [PublicHD]">Dexter.S08E04.720p.HDTV.x264-EVOLVE [PublicHD]</a>
+</div>
+<a href="magnet:?xt=urn:btih:65331869d5ab571ea094d60c8ac7b9134a99bfef&dn=Dexter.S08E04.720p.HDTV.x264-EVOLVE+%5BPublicHD%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 3 comments." title="This torrent has 3 comments." /><a href="/user/DibyaTPB"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+      <font class="detDesc">Uploaded 07-22&nbsp;04:15, Size 1.14&nbsp;GiB, ULed by <a class="detDesc" href="/user/DibyaTPB/" title="Browse DibyaTPB">DibyaTPB</a></font>
+    </td>
+    <td align="right">997</td>
+    <td align="right">154</td>
+  </tr>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8723605/Dexter.S08E04.720p.HDTV.x264-EVOLVE[rartv]" class="detLink" title="Details for Dexter.S08E04.720p.HDTV.x264-EVOLVE[rartv]">Dexter.S08E04.720p.HDTV.x264-EVOLVE[rartv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:626018f66dd01c977b52fd99bfea365ab389b0d7&dn=Dexter.S08E04.720p.HDTV.x264-EVOLVE%5Brartv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/user/Drarbg"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+      <font class="detDesc">Uploaded 07-22&nbsp;04:16, Size 1.16&nbsp;GiB, ULed by <a class="detDesc" href="/user/Drarbg/" title="Browse Drarbg">Drarbg</a></font>
+    </td>
+    <td align="right">783</td>
+    <td align="right">144</td>
+  </tr>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8723664/Dexter.S08E04.720p.HDTV.x264-EVOLVE" class="detLink" title="Details for Dexter.S08E04.720p.HDTV.x264-EVOLVE">Dexter.S08E04.720p.HDTV.x264-EVOLVE</a>
+</div>
+<a href="magnet:?xt=urn:btih:b9ee775da14087fb20fa711412e406b5c47ea15c&dn=Dexter.S08E04.720p.HDTV.x264-EVOLVE&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+      <font class="detDesc">Uploaded 07-22&nbsp;04:39, Size 1.16&nbsp;GiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+    </td>
+    <td align="right">163</td>
+    <td align="right">20</td>
+  </tr>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8724285/Dexter.S08E04.720p.HDTV.x264-EVOLVE" class="detLink" title="Details for Dexter.S08E04.720p.HDTV.x264-EVOLVE">Dexter.S08E04.720p.HDTV.x264-EVOLVE</a>
+</div>
+<a href="magnet:?xt=urn:btih:0d105389dc24bcbbfb3f854fd5ccea6322dbbd88&dn=Dexter.S08E04.720p.HDTV.x264-EVOLVE&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/user/kthhaque"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+      <font class="detDesc">Uploaded 07-22&nbsp;08:23, Size 1.15&nbsp;GiB, ULed by <a class="detDesc" href="/user/kthhaque/" title="Browse kthhaque">kthhaque</a></font>
+    </td>
+    <td align="right">144</td>
+    <td align="right">38</td>
+  </tr>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8727057/Dexter_S08E04_-_Scar_Tissue_[720p_HDTV_325MB].mkv" class="detLink" title="Details for Dexter S08E04 - Scar Tissue [720p HDTV 325MB].mkv">Dexter S08E04 - Scar Tissue [720p HDTV 325MB].mkv</a>
+</div>
+<a href="magnet:?xt=urn:btih:a98a5d1d12357e3b29cf2d88e7fa571e5c49ab41&dn=Dexter+S08E04+-+Scar+Tissue+%5B720p+HDTV+325MB%5D.mkv&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><img src="/static/img/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image" /><img src="/static/img/11x11p.png" />
+      <font class="detDesc">Uploaded 07-22&nbsp;21:14, Size 324.2&nbsp;MiB, ULed by <a class="detDesc" href="/user/[nItRo]-eNcOdEs/" title="Browse [nItRo]-eNcOdEs">[nItRo]-eNcOdEs</a></font>
+    </td>
+    <td align="right">136</td>
+    <td align="right">17</td>
+  </tr>
+  <tr>
+    <td class="vertTh">
+      <center>
+        <a href="/browse/200" title="More from this category">Video</a><br />
+        (<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+      </center>
+    </td>
+    <td>
+<div class="detName">     <a href="/torrent/8723627/Dexter.S08E04.720p.HDTV.x264-EVOLVE" class="detLink" title="Details for Dexter.S08E04.720p.HDTV.x264-EVOLVE">Dexter.S08E04.720p.HDTV.x264-EVOLVE</a>
+</div>
+<a href="magnet:?xt=urn:btih:20143ebc147fa29c5f2c4217bc5c095bc300e202&dn=Dexter.S08E04.720p.HDTV.x264-EVOLVE&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><a href="/user/sceneline"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+      <font class="detDesc">Uploaded 07-22&nbsp;04:26, Size 1.16&nbsp;GiB, ULed by <a class="detDesc" href="/user/sceneline/" title="Browse sceneline">sceneline</a></font>
+    </td>
+    <td align="right">41</td>
+    <td align="right">1</td>
+  </tr>
+
+</table>
+</div>
+<div align="center"></div>
+      <div class="ads" id="sky-banner">
+         <iframe src="http://cdn1.adexprt.com/exo_na/sky1.html" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+  </div></div></div><!-- //div:content -->
+
+  <div id="foot" style="text-align:center;margin-top:1em;">
+
+       <iframe src="http://cdn2.adexprt.com/exo_na/bottom.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+        <p>
+      <a href="/login" title="Login">Login</a> | 
+      <a href="/register" title="Register">Register</a> | 
+      <a href="/language" title="Select language">Language / Select language</a> |
+      <a href="/about" title="About">About</a> |
+      <a href="/legal" title="Legal threats">Legal threats</a> |
+      <a href="/blog" title="Blog">Blog</a>
+      <br />
+      <a href="/contact" title="Contact us">Contact us</a> |
+      <a href="/policy" title="Usage policy">Usage policy</a> |
+      <a href="/downloads" title="Downloads">Downloads</a> |
+      <a href="http://www.promobay.org/" title="Promo" target="_NEW">Promo</a> |
+      <a href="/doodles" title="Doodles">Doodles</a> |
+      <a href="/tags" title="Tag Cloud">Tag Cloud</a> |
+      <a href="http://suprbay.org/" title="Forum" target="_blank">Forum</a> |
+      <b><a href="http://www.bytelove.com/partners/thepiratebay/" title="TPB T-shirts" target="_blank">TPB T-shirts</a></b>
+      <br />
+      <a href="http://bayfiles.net" title="Bayfiles" target="_blank">Bayfiles</a> |
+      <a href="http://bayimg.com" title="BayImg" target="_blank">BayImg</a> |
+      <a href="http://pastebay.net" title="PasteBay" target="_blank">PasteBay</a> |
+      <a href="http://uberproxy.net" title="Proxy" target="_blank">Proxy</a> |
+      <a href="https://twitter.com/tpbdotorg" title="Twitter" target="_blank">Follow TPB on Twitter</a> |
+      <a href="https://www.facebook.com/ThePirateBayWarMachine" title="Facebook" target="_blank">Follow TPB on Facebook</a>
+      <br />
+    </p>
+
+<p id="footer" style="color:#666; font-size:0.9em; ">
+        6.325.225 registered users. Last updated 03:30:05.<br />
+        65.678.265 peers (50.183.628 seeders + 15.494.637 leechers) in 5.572.901 torrents.<br />
+</p>
+<br /><a href="http://bitcoin.org" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br /><a href="http://litecoin.org" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br /><br /><br /><img src="/static/img/btcltc.png"><br /><br />
+
+    <div id="fbanners">
+      <a href="/rss" class="rss" title="RSS"><img src="/static/img/rss_small.gif" alt="RSS" /></a>
+    </div><!-- // div:fbanners -->
+  </div><!-- // div:foot -->
+<script type="text/javascript" src="/static/js/ah4128U.js"></script><script type="text/javascript" src="/static/js/poptest.js"></script><script type="text/javascript" src="http://cdn1.adexprt.com/pop-go-trigger.js"></script><!-- abc: BR 0 -->
+</body>
+</html>

@@ -1,0 +1,4 @@
+.bundle
+tmp
+.env.*
+.env

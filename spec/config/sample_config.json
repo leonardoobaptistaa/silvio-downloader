@@ -1,0 +1,16 @@
+{
+    "shows": [
+        {
+            "name": "Dexter",
+            "quality": "HD",
+            "seasson": 8,
+            "episode": 4
+        }
+    ],
+    "hour_interval": 2,
+    "download_path": "~/Downloads",
+    "transmission_host": "192.168.1.99",
+    "transmission_password": "9091",
+    "transmission_user": "user",
+    "transmission_password": "transmission"
+}
