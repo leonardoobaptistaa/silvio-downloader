@@ -16,6 +16,7 @@ module SilvioDownloader
       config_file = config.read
       self.file = File.absolute_path(config.path)
       json = JSON.parse(config_file)
+      config.close
 
       self.shows = []
       parse_shows( json['shows'] )
@@ -39,7 +40,9 @@ module SilvioDownloader
     end
 
     def update
-      File.open(self.file, 'w').write(self.to_json)
+      config_file = File.open(self.file, 'w')
+      config_file.write(self.to_json)
+      config_file.close
     end
   end
 end
