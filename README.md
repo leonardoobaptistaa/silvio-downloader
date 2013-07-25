@@ -45,10 +45,7 @@ Check configuration section to check whole json file
 
 ### Setup
 
-Setup:
-
 ```
-cd project-folder
 bundle
 ```
 
