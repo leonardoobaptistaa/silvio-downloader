@@ -31,7 +31,7 @@ How to install transmission-daemon here.
 ### Clone this repository:
 
 ```
-$ git clone git@github.com:leonardoobaptistaa/silvio-downloader.git 
+$ git clone https://github.com/leonardoobaptistaa/silvio-downloader.git 
 ```
 
 ### Configure ./config/silvio-downloader.json
