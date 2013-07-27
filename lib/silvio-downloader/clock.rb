@@ -64,4 +64,4 @@ handler do |job|
 end
 
 config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
-every(config.hour_interval.minutes, 'check_new_torrents.job')
+every(config.hour_interval.hours, 'check_new_torrents.job')
