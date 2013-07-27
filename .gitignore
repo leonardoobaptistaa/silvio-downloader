@@ -3,3 +3,4 @@ tmp
 .env.*
 .env
 config/silvio-downloader.json
+log/*
