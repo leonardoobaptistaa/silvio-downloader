@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
 gem 'json', "~> 1.8.0"
 gem 'mechanize'
-gem 'rake'
 gem 'rtransmission'
+gem 'clockwork'
 
 group :test do
   gem 'rspec'

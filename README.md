@@ -49,12 +49,10 @@ Check configuration section to check whole json file
 bundle
 ```
 
-### Runing Manually
-
-The only way to run for now is manually:
+### Running every x hours
 
 ```
-bundle exec rake check
+bundle exec clockwork lib/silvio-downloader/clock.rb &
 ```
 
 Configuration
