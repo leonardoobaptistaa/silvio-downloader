@@ -25,6 +25,10 @@ module SilvioDownloader
       subject.next_seasson_name.should == "Dexter S09E01 720p"
     end
 
+    it '#to_s get next seasson episode' do
+      subject.to_s.should == "Dexter S08E04 720p"
+    end
+
     xit '#find_best_link get magnet link from best seeded torrent' do
       html_file = File.new('spec/htmls/thepiratebay.html')
       requested_link = 'http://thepiratebay.sx/search/Dexter S08E05 720p/0/7/208'

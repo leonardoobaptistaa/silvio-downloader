@@ -21,6 +21,12 @@ module SilvioDownloader
       "#{name} S#{seasson_name}E01 #{quality_string}"
     end
 
+    def to_s
+      episode_name = "%.2d" % self.episode
+      seasson_name = "%.2d" % self.seasson
+      "#{name} S#{seasson_name}E#{episode_name} #{quality_string}"
+    end
+
     #TODO: NEED TEST
     def find_link(link)
       agent = Mechanize.new 
