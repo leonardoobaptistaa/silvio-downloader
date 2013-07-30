@@ -2,87 +2,63 @@ Silvio Downloader
 =================
 
 Silvio Downloader is an automatic TVShow torrent downloader from The Pirate Bay.
-It support only transmission for now.
 
-Instalation
------------
+Dependencies
+------------
 
-### Install ruby
+* Ruby 2
+* Supported torrent client
+  * [Transmission](http://www.transmissionbt.com/)
 
-Officially supported version is > 2.0.0
+Choose a torrent client
+-----------------------
 
-[I recommend install rvm](https://rvm.io/rvm/install), and after:
+#### [Transmission](http://www.transmissionbt.com/)
 
-```
-rvm install 2.0.0
-rvm --default use 2.0.0
-```
+You can set your transmission client to run as daemon or a normal torrent client, 
+but it need to have the web interface configured.
 
-### Install bundler
+Instructions to enable web interface: 
+ * [OSX](https://trac.transmissionbt.com/wiki/OSX/DesktopRemote)
+ * [Ubuntu as Daemon](http://rickylford.com/transmission-on-ubuntu-server-12-04-lts/)
 
-```
-gem install bundler
-```
-
-### Install tranmission
-
-How to install transmission-daemon here.
-
-### Clone this repository:
+Install Silvio Downloader Gem
+-----------------------------
 
 ```
-$ git clone https://github.com/leonardoobaptistaa/silvio-downloader.git 
+gem install silvio-downloader
+silvio configure
+silvio start
 ```
 
-### Configure ./config/silvio-downloader.json
+Aditional configuration
+-----------------------
+
+* Adding a new show with episode and seasson numbers
 
 ```
-cd silvio-downloader
-cp config/silvio-downloader.json.sample config/silvio-downloader.json
+silvio add Dexter.s080e05.HD
+silvio add The.Big.Bang.Theory.s040e22.HD
 ```
 
-Check configuration section to check whole json file
-
-### Setup
+* Removing a show
 
 ```
-bundle
+silvio rm Dexter
+silvio rm The.Big.Bang.Theory
 ```
 
-### Running every x hours
+* Listing Shows
 
 ```
-bundle exec clockwork lib/silvio-downloader/clock.rb &
+silvio shows
 ```
 
-Configuration
--------------
-
-For now, the configuration is a json file stored at ./config/silvio-downloader.json
+* Torrent client
 
 ```
-{
-  "shows": [
-    {
-  "name": "Dexter",
-  "seasson": 8,
-  "episode": 4,
-  "quality": "HD"
-},
-    {
-  "name": "Suits",
-  "seasson": 3,
-  "episode": 2,
-  "quality": "HD"
-}
-  ],
-  "hour_interval": 1,
-  "download_path": "/home/user/TvShows/",
-  "transmission_host": "127.0.0.1",
-  "transmission_port": "9091",
-  "transmission_user": "user",
-  "transmission_password": "password"
-}
+silvio torrent transmission user:password@192.168.1.99:9091
+-> Ok
 ```
 
 How to contribuite
@@ -91,7 +67,6 @@ How to contribuite
 * Fork this project
 * Run tests using bundle exec rspec OR bundle exec guard
 * It will be nice to implement some of this features
-  * Other torrent sites support
   * Other torrent clients support
   * Easy install
   * Sinatra web interface to modify config file

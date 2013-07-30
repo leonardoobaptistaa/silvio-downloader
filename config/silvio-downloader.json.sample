@@ -1,22 +1,22 @@
 {
   "shows": [
-    {
-  "name": "Dexter",
-  "seasson": 8,
-  "episode": 4,
-  "quality": "HD"
-},
-    {
-  "name": "Suits",
-  "seasson": 3,
-  "episode": 2,
-  "quality": "HD"
-}
-  ],
-  "hour_interval": 1,
-  "download_path": "/home/user/TvShows/",
-  "transmission_host": "127.0.0.1",
-  "transmission_port": "9091",
-  "transmission_user": "user",
-  "transmission_password": "password"
+  {
+    "name": "Dexter",
+    "seasson": 8,
+    "episode": 4,
+    "quality": "HD"
+  },
+  {
+    "name": "Suits",
+    "seasson": 3,
+    "episode": 2,
+    "quality": "HD"
+  }],
+  "hour_interval": 2,
+  "download_path": "~/Downloads",
+  "torrent_client": "transmission",
+  "torrent_host": "192.168.1.99",
+  "torrent_port": "9091",
+  "torrent_user": "user",
+  "torrent_password": "transmission"
 }

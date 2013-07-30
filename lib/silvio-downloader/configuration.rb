@@ -4,10 +4,11 @@ module SilvioDownloader
     attr_accessor :file
     attr_accessor :hour_interval
     attr_accessor :download_path
-    attr_accessor :transmission_host
-    attr_accessor :transmission_port
-    attr_accessor :transmission_user
-    attr_accessor :transmission_password
+    attr_accessor :torrent_client
+    attr_accessor :torrent_host
+    attr_accessor :torrent_port
+    attr_accessor :torrent_user
+    attr_accessor :torrent_password
     attr_accessor :shows
 
     def initialize(file)
@@ -22,10 +23,11 @@ module SilvioDownloader
       parse_shows( json['shows'] )
       self.hour_interval = json['hour_interval'] || 1
       self.download_path = json['download_path']
-      self.transmission_host = json['transmission_host'] || '127.0.0.1'
-      self.transmission_port = json['transmission_port'] || '9091'
-      self.transmission_user = json['transmission_user'] || 'user'
-      self.transmission_password = json['transmission_password'] || 'transmission'
+      self.torrent_client = json['torrent_client'] || 'transmission'
+      self.torrent_host = json['torrent_host'] || '127.0.0.1'
+      self.torrent_port = json['torrent_port'] || '9091'
+      self.torrent_user = json['torrent_user'] || 'user'
+      self.torrent_password = json['torrent_password'] || 'transmission'
     end
 
     def parse_shows(shows)

@@ -55,20 +55,24 @@ module SilvioDownloader
           subject.download_path.should eq '~/Downloads'
         end
 
-        it 'should parse transmission_host' do
-          subject.transmission_host.should eq '192.168.1.99'
+        it 'should parse torrent_client' do
+          subject.torrent_client.should eq 'transmission'
         end
 
-        it 'should parse transmission port' do
-          subject.transmission_port.should eq '9091'
+        it 'should parse torrent_host' do
+          subject.torrent_host.should eq '192.168.1.99'
         end
 
-        it 'should parse transmission_user' do
-          subject.transmission_user.should eq 'user'
+        it 'should parse torrent_port' do
+          subject.torrent_port.should eq '9091'
         end
 
-        it 'should parse transmission_password' do
-          subject.transmission_password.should eq 'transmission'
+        it 'should parse torrent_user' do
+          subject.torrent_user.should eq 'user'
+        end
+
+        it 'should parse torrent_password' do
+          subject.torrent_password.should eq 'transmission'
         end
       end
 
