@@ -6,6 +6,22 @@ module SilvioDownloader
     attr_accessor :episode
     attr_accessor :quality
 
+    def self.new_with_description(tvshow_description)
+
+      params = tvshow_description.split('.')
+      seasson_string = params[params.count-2].gsub(/s|e/i, '')
+      name = params[0..params.count-3].join(' ')
+      seasson = seasson_string[0..1].to_i
+      episode = seasson_string[2..3].to_i
+      quality = params.last
+      Show.new.tap do |show|
+        show.name = name.gsub(/\w+/) {|w| w.capitalize }
+        show.seasson = seasson
+        show.episode = episode
+        show.quality = quality.upcase
+      end
+    end
+
     def quality_string
       return self.quality == "HD" ? "720p" : "HDTV"
     end

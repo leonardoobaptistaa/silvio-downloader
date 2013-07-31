@@ -37,28 +37,32 @@ Aditional configuration
 * Adding a new show with episode and seasson numbers
 
 ```
-silvio add Dexter.s080e05.HD
-silvio add The.Big.Bang.Theory.s040e22.HD
+silvio shows:add dexter.s080e05.hd
+silvio shows:add the.big.bang.theory.s040e22.sd
 ```
 
 * Removing a show
 
 ```
-silvio rm Dexter
-silvio rm The.Big.Bang.Theory
+silvio shows:rm dexter
+silvio shows:rm the.big.bang.theory
 ```
 
 * Listing Shows
 
 ```
-silvio shows
+silvio shows:list
 ```
 
 * Torrent client
 
 ```
-silvio torrent transmission user:password@192.168.1.99:9091
--> Ok
+silvio torrent:setup transmission user:password@192.168.1.99:9091
+```
+
+```
+silvio torrent:list 
+-> transmission user:password@192.168.1.99:9091
 ```
 
 How to contribuite
