@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake'
 gem 'json', "~> 1.8.0"
 gem 'mechanize'
 gem 'rtransmission'
