@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__) + "/../lib")
+require 'rubygems'
+require 'rake'
+Rake::load_rakefile("#{File.dirname(__FILE__)}/../Rakefile")
+
+task=ARGV[0]
+param = ARGV[1]
+
+if task.nil?
+elsif param.nil?
+  Rake::Task[task].invoke
+else
+  Rake::Task[task].invoke(param)
+end
