@@ -38,17 +38,27 @@ namespace :shows do
   end
 end
 
-desc "First configuration"
-task :configure do
-  FileUtils.cp('config/silvio-downloader.json.sample', 'config/silvio-downloader.json')
-  config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
-  config.update
+namespace :configure do
+  desc "First configuration"
+  task :first_run do
+    FileUtils.cp('config/silvio-downloader.json.sample', 'config/silvio-downloader.json')
+    config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
+    config.update
 
-  unless File.directory?('log')
-    Dir.mkdir('log')
-    File.open('log/silvio_downloader.log', 'w') {
-      |file| file.write("file created")
-    }
+    unless File.directory?('log')
+      Dir.mkdir('log')
+      File.open('log/silvio_downloader.log', 'w') {
+        |file| file.write("file created")
+      }
+    end
+  end
+
+  desc "Download path"
+  task :download_path, [:path] do |t, args|
+    config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
+    config.download_path = args[:path].chomp("/")
+    config.update
+    puts "Download path set to: #{config.download_path}"
   end
 end
 

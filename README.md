@@ -63,13 +63,13 @@ silvio shows:list
 
 * Download path
 
-For now, you have to open config/silvio-downloader.json file and edit it
-manually.
+```
+silvio configure:download_path custom/path/to/download
+```
 
-Change download_path entry to change the path. Every Tv Show already have its
-folder, so if you set your download folder to ~/Downloads, when silvio downloads
-a The Walking Dead episode, it will save on ~/Downloads/The Walking Dead. For
-now this config cannot be changed.
+Note: Every Tv Show already have its folder, so if you set your download folder
+to ~/Downloads, when silvio downloads a The Walking Dead episode, it will save
+on ~/Downloads/The Walking Dead. For now this config cannot be changed.
 
 * Torrent client
 

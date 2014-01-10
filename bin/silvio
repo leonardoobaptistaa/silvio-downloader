@@ -8,7 +8,7 @@ task=ARGV[0]
 param = ARGV[1]
 
 unless File.exist?('config/silvio-downloader.json')
-  Rake::Task['configure'].invoke
+  Rake::Task['configure:first_run'].invoke
 end
 
 if task.nil?
