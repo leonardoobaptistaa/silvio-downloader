@@ -17,6 +17,18 @@ include Clockwork
       port: @config.torrent_port
     )
 
+handler do |job|
+  @logger.info('Loading config/silvio-downloader.json')
+  @config.shows.each do |show|
+    next if download_next_episode(show, show.find_best_link_episode)
+    next if download_next_episode(show, show.find_best_link_seasson, true)
+  end
+
+  @logger.info('Finishing run')
+end
+
+every(@config.hour_interval.hours, 'check_new_torrents.job')
+
 def download_next_episode(show, link, update_to_next_seasson = false)
   return false if link.nil?
 
@@ -41,15 +53,3 @@ def download_next_episode(show, link, update_to_next_seasson = false)
 
   true
 end
-
-handler do |job|
-  @logger.info('Loading config/silvio-downloader.json')
-  @config.shows.each do |show|
-    next if download_next_episode(show, show.find_best_link_episode)
-    next if download_next_episode(show, show.find_best_link_seasson, true)
-  end
-
-  @logger.info('Finishing run')
-end
-
-every(@config.hour_interval.hours, 'check_new_torrents.job')
