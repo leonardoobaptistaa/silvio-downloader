@@ -7,6 +7,10 @@ Rake::load_rakefile("#{File.dirname(__FILE__)}/../Rakefile")
 task=ARGV[0]
 param = ARGV[1]
 
+unless File.exist?('config/silvio-downloader.json')
+  Rake::Task['configure'].invoke
+end
+
 if task.nil?
 elsif param.nil?
   Rake::Task[task].invoke
