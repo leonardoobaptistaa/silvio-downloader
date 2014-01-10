@@ -38,6 +38,20 @@ namespace :shows do
   end
 end
 
+desc "First configuration"
+task :configure do
+  FileUtils.cp('config/silvio-downloader.json.sample', 'config/silvio-downloader.json')
+  config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
+  config.update
+
+  unless File.directory?('log')
+    Dir.mkdir('log')
+    File.open('log/silvio_downloader.log', 'w') {
+      |file| file.write("file created")
+    }
+  end
+end
+
 namespace :torrent do
-  
+
 end
