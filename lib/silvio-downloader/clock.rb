@@ -3,65 +3,53 @@ $LOAD_PATH.unshift( File.expand_path('../../../lib', __FILE__) )
 require 'silvio-downloader'
 require 'clockwork'
 require 'logger'
+require 'rtransmission'
 
 include Clockwork
 
-logger = Logger.new('log/silvio_downloader.log')
+@config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
+@logger = Logger.new('log/silvio_downloader.log')
 
-handler do |job|
-  require 'rtransmission'
-
-  logger.info('Loading config/silvio-downloader.json')
-  config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
-  config.shows.each do |show|
-    download_path = "#{config.download_path}#{show.name}"
-    
-    session = RTransmission::Client.session(
-      user: config.transmission_user,
-      password: config.transmission_password,
-      host: config.transmission_host,
-      port: config.transmission_port
+@session = RTransmission::Client.session(
+      user: @config.torrent_user,
+      password: @config.torrent_password,
+      host: @config.torrent_host,
+      port: @config.torrent_port
     )
 
-    link = show.find_best_link_episode
-    if link.nil? == false
-      logger.info("Adding #{show.next_episode_name}")
-      logger.info("Download path set to #{download_path}")
+def download_next_episode(show, link, update_to_next_seasson = false)
+  return false if link.nil?
 
-      begin
-        RTransmission::Torrent.add(session, :url => link, :download_dir => download_path)
-        show.update_to_next_episode
-        logger.info("Updating configuration file")
-        config.update
-      rescue Exception => e
-        logger.error "#{e.message}\n#{e.backtrace.join("\n")}"
-        break
-      end
+  download_path = "#{@config.download_path}/#{show.name}"
+  @logger.info("Adding #{show.next_episode_name}")
+  @logger.info("Download path set to #{download_path}")
 
-      next
-    end
-
-    link = show.find_best_link_seasson
-    if link.nil? == false
-      logger.info("Adding #{show.next_episode_name}")
-      logger.info("Download path set to #{download_path}")
-
-      begin
-        RTransmission::Torrent.add(session, :url => link, :download_dir => download_path)
-        show.update_to_next_seasson
-        logger.info("Updating configuration file")
-        config.update
-      rescue Exception => e
-        logger.error "#{e.message}\n#{e.backtrace.join("\n")}"
-        break
-      end
-
-      next
-    end
+  begin
+    RTransmission::Torrent.add(@session, url: link, download_dir: download_path)
+  rescue Exception => e
+    @logger.error "#{e.message}\n#{e.backtrace.join("\n")}"
+    return false
   end
 
-  logger.info('Finishing run')
+  @logger.info("Updating configuration file")
+  if update_to_next_seasson
+    show.update_to_next_seasson
+  else
+    show.update_to_next_episode
+  end
+  @config.update
+
+  true
 end
 
-config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
-every(config.hour_interval.hours, 'check_new_torrents.job')
+handler do |job|
+  @logger.info('Loading config/silvio-downloader.json')
+  @config.shows.each do |show|
+    next if download_next_episode(show, show.find_best_link_episode)
+    next if download_next_episode(show, show.find_best_link_seasson, true)
+  end
+
+  @logger.info('Finishing run')
+end
+
+every(@config.hour_interval.hours, 'check_new_torrents.job')
