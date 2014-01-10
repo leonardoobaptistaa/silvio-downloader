@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake'
 gem 'json', "~> 1.8.0"
 gem 'mechanize'
 gem 'rtransmission'
@@ -9,9 +10,9 @@ group :test do
   gem 'rspec'
   gem 'guard-rspec'
   gem 'rb-fsevent'
-  gem 'webmock'
+  gem 'fakeweb'
 end
 
 group :development, :test do
-  gem 'pry-debugger'
+  gem 'pry-nav'
 end

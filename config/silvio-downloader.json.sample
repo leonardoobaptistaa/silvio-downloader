@@ -1,22 +1,5 @@
 {
-  "shows": [
-    {
-  "name": "Dexter",
-  "seasson": 8,
-  "episode": 4,
-  "quality": "HD"
-},
-    {
-  "name": "Suits",
-  "seasson": 3,
-  "episode": 2,
-  "quality": "HD"
-}
-  ],
+  "shows": [],
   "hour_interval": 1,
-  "download_path": "/home/user/TvShows/",
-  "transmission_host": "127.0.0.1",
-  "transmission_port": "9091",
-  "transmission_user": "user",
-  "transmission_password": "password"
+  "download_path": "~/Downloads"
 }

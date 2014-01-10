@@ -1,6 +1,6 @@
 ENV['ENVIRONMENT'] ||= 'test'
 
-require 'webmock/rspec'
+require 'fakeweb'
 require 'silvio-downloader'
 
 RSpec.configure do |config|

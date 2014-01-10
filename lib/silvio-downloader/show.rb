@@ -6,6 +6,22 @@ module SilvioDownloader
     attr_accessor :episode
     attr_accessor :quality
 
+    def self.new_with_description(tvshow_description)
+
+      params = tvshow_description.split('.')
+      seasson_string = params[params.count-2].gsub(/s|e/i, '')
+      name = params[0..params.count-3].join(' ')
+      seasson = seasson_string[0..1].to_i
+      episode = seasson_string[2..3].to_i
+      quality = params.last
+      Show.new.tap do |show|
+        show.name = name.gsub(/\w+/) {|w| w.capitalize }
+        show.seasson = seasson
+        show.episode = episode
+        show.quality = quality.upcase
+      end
+    end
+
     def quality_string
       return self.quality == "HD" ? "720p" : "HDTV"
     end
@@ -27,9 +43,8 @@ module SilvioDownloader
       "#{name} S#{seasson_name}E#{episode_name} #{quality_string}"
     end
 
-    #TODO: NEED TEST
     def find_link(link)
-      agent = Mechanize.new 
+      agent = Mechanize.new
       agent.get(link)
 
       best_link = agent.page.links_with(:href => /magnet/).first
@@ -39,11 +54,11 @@ module SilvioDownloader
     end
 
     def find_best_link_episode
-      find_link("http://thepiratebay.sx/search/#{next_episode_name}/0/7/208")
+      find_link("http://thepiratebay.org/search/#{next_episode_name}/0/7/208")
     end
 
     def find_best_link_seasson
-      find_link("http://thepiratebay.sx/search/#{next_seasson_name}/0/7/208")
+      find_link("http://thepiratebay.org/search/#{next_seasson_name}/0/7/208")
     end
 
     def update_to_next_seasson
