@@ -1,22 +1,5 @@
 {
-  "shows": [
-  {
-    "name": "Dexter",
-    "seasson": 8,
-    "episode": 4,
-    "quality": "HD"
-  },
-  {
-    "name": "Suits",
-    "seasson": 3,
-    "episode": 2,
-    "quality": "HD"
-  }],
-  "hour_interval": 2,
-  "download_path": "~/Downloads",
-  "torrent_client": "transmission",
-  "torrent_host": "192.168.1.99",
-  "torrent_port": "9091",
-  "torrent_user": "user",
-  "torrent_password": "transmission"
+  "shows": [],
+  "hour_interval": 1,
+  "download_path": "~/Downloads"
 }
