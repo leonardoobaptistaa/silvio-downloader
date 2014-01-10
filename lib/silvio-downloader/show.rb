@@ -43,9 +43,8 @@ module SilvioDownloader
       "#{name} S#{seasson_name}E#{episode_name} #{quality_string}"
     end
 
-    #TODO: NEED TEST
     def find_link(link)
-      agent = Mechanize.new 
+      agent = Mechanize.new
       agent.get(link)
 
       best_link = agent.page.links_with(:href => /magnet/).first
@@ -55,11 +54,11 @@ module SilvioDownloader
     end
 
     def find_best_link_episode
-      find_link("http://thepiratebay.sx/search/#{next_episode_name}/0/7/208")
+      find_link("http://thepiratebay.org/search/#{next_episode_name}/0/7/208")
     end
 
     def find_best_link_seasson
-      find_link("http://thepiratebay.sx/search/#{next_seasson_name}/0/7/208")
+      find_link("http://thepiratebay.org/search/#{next_seasson_name}/0/7/208")
     end
 
     def update_to_next_seasson
