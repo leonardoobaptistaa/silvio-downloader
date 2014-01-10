@@ -85,6 +85,12 @@ For now you have to start Silvio manually running:
 bundle exec clockwork lib/silvio-downloader/clock.rb
 ```
 
+Put a & at the end, if you want to release your terminal:
+
+```
+bundle exec clockwork lib/silvio-downloader/clock.rb &
+```
+
 How to contribuite
 ------------------
 
