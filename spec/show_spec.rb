@@ -47,7 +47,7 @@ module SilvioDownloader
     end
 
     describe '#new' do
-      subject { 
+      subject {
         Show.new.tap do |show|
           show.name = name
           show.quality = quality
@@ -60,7 +60,7 @@ module SilvioDownloader
       let(:quality) { "HD" }
       let(:episode) { 4 }
       let(:seasson) { 8 }
-    
+
       it '#next_episode_name get next episode' do
         subject.next_episode_name.should == "Dexter S08E05 720p"
       end
@@ -73,14 +73,18 @@ module SilvioDownloader
         subject.to_s.should == "Dexter S08E04 720p"
       end
 
-      xit '#find_best_link get magnet link from best seeded torrent' do
+      it '#find_best_link get magnet link from best seeded torrent' do
         html_file = File.new('spec/htmls/thepiratebay.html')
-        requested_link = 'http://thepiratebay.sx/search/Dexter S08E05 720p/0/7/208'
+        requested_link = 'http://thepiratebay.sx/search/Dexter%20S08E05%20720p/0/7/208'
 
-        stub_request(:any, requested_link).to_return(:body => html_file, :status => 200)
-        
-        subject.find_best_link.should eq 
-        'magnet:?xt=urn:btih:afeca4c382e3cf1029defe1bbd87ed9faaf84c0e&dn=Dexter+S08E04+720p+HDTV+x264-EVOLVE+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337'
+        FakeWeb.register_uri(:get,
+          requested_link,
+          body: html_file.read,
+          content_type: 'text/html'
+        )
+
+        subject.find_link(requested_link).should eq (
+          'magnet:?xt=urn:btih:afeca4c382e3cf1029defe1bbd87ed9faaf84c0e&dn=Dexter+S08E04+720p+HDTV+x264-EVOLVE+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337')
       end
 
       describe '#update_to_next_seasson' do

@@ -10,7 +10,7 @@ group :test do
   gem 'rspec'
   gem 'guard-rspec'
   gem 'rb-fsevent'
-  gem 'webmock'
+  gem 'fakeweb'
 end
 
 group :development, :test do
