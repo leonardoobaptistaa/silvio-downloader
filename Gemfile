@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'foreman'
 gem 'rake'
 gem 'json', "~> 1.8.0"
 gem 'mechanize'

@@ -16,8 +16,8 @@ Choose a torrent client
 
 #### [Transmission](http://www.transmissionbt.com/)
 
-You can set your transmission client to run as daemon or a normal torrent client,
-but it need to have the web interface configured.
+You can set your transmission client to run as daemon or a normal torrent
+client, but it need to have the web interface configured.
 
 Instructions to enable web interface:
  * [OSX](https://trac.transmissionbt.com/wiki/OSX/DesktopRemote)
@@ -30,6 +30,7 @@ Make sure that you have Ruby 2, git client and open your terminal.
 
 ```
 gem install bundler
+gem install foreman
 git clone git@github.com:leonardoobaptistaa/silvio-downloader.git
 cd silvio-downloader
 bundle
@@ -37,6 +38,14 @@ bundle
 
 Configure your downloader
 -------------------------
+
+First check if this command is working:
+
+```
+silvio
+```
+
+If not, please substitute ```silvo``` for ```lib/silvio```
 
 * Adding a new show with episode and seasson numbers
 
@@ -79,16 +88,28 @@ You can set things like user, password, torrent client location and port.
 Start downloading
 -----------------
 
-For now you have to start Silvio manually running:
+###Automatic downloads
+
+The best use of Silvio Downloader is to have it running on login by default.
+To do this, you can generate start up scrips from foreman export tool.
+
+####Ubuntu (using upstart)
 
 ```
-bundle exec clockwork lib/silvio-downloader/clock.rb
+foreman export upstart /etc/init -a silvio -u <your-login-user>
+sudo start silvio
 ```
 
-Put a & at the end, if you want to release your terminal:
+####Mac OS X
+
+TODO - launchd scripts
+
+###Manually
+
+Or you can start downloads manually using
 
 ```
-bundle exec clockwork lib/silvio-downloader/clock.rb &
+foreman start &
 ```
 
 How to contribuite
