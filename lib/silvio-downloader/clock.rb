@@ -7,7 +7,7 @@ require 'rtransmission'
 
 include Clockwork
 
-@config = read_config
+@config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
 @logger = Logger.new('log/silvio_downloader.log')
 
 @session = RTransmission::Client.session(
@@ -18,7 +18,7 @@ include Clockwork
     )
 
 handler do |job|
-  @config = read_config
+  @config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
   @logger.info('Loading config/silvio-downloader.json')
   @config.shows.each do |show|
     next if download_next_episode(show, show.find_best_link_episode)
@@ -29,10 +29,6 @@ handler do |job|
 end
 
 every(@config.hour_interval.hours, 'check_new_torrents.job')
-
-def read_config
-  SilvioDownloader::Configuration.new('config/silvio-downloader.json')
-end
 
 def download_next_episode(show, link, update_to_next_seasson = false)
   return false if link.nil?
