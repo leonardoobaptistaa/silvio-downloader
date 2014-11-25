@@ -90,16 +90,16 @@ module SilvioDownloader
       describe '#find_best_link_episode' do
         it "should call find_link with .org url and without 'sneak.peek' term" do
           subject.should_receive(:find_link).once.with(
-            "http://thepiratebay.org/search/Dexter S08E05 720p -(sneak.peek)/0/7/208"
+            "http://thepiratebay.org/search/Dexter S08E05 720p -(sneak.peek) -(cocain)/0/7/208"
           )
           subject.find_best_link_episode
         end
       end
 
       describe '#find_best_link_seasson' do
-        it "should call find_link with .org url and without 'sneak.peek' term" do
+        it "should call find_link with .org url and without 'sneak.peek' and 'cocain' terms" do
           subject.should_receive(:find_link).once.with(
-            "http://thepiratebay.org/search/Dexter S09E01 720p -(sneak.peek)/0/7/208"
+            "http://thepiratebay.org/search/Dexter S09E01 720p -(sneak.peek) -(cocain)/0/7/208"
           )
           subject.find_best_link_seasson
         end
