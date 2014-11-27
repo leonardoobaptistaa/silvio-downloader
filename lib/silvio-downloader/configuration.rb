@@ -12,7 +12,7 @@ module SilvioDownloader
     attr_accessor :shows
 
     def initialize(file)
-      
+
       config = open(file)
       config_file = config.read
       self.file = File.absolute_path(config.path)
@@ -21,7 +21,7 @@ module SilvioDownloader
 
       self.shows = []
       parse_shows( json['shows'] )
-      self.hour_interval = json['hour_interval'] || 1
+      self.hour_interval = json['hour_interval'] || 4
       self.download_path = json['download_path']
       self.torrent_client = json['torrent_client'] || 'transmission'
       self.torrent_host = json['torrent_host'] || '127.0.0.1'

@@ -44,11 +44,11 @@ module SilvioDownloader
         end
       end
 
-      context 'with all options filled' do  
+      context 'with all options filled' do
         subject {Configuration.new('spec/config/sample_config.json') }
 
         it 'should parse JSON, hour interval' do
-          subject.hour_interval.should == 2
+          subject.hour_interval.should == 4
         end
 
         it 'should parse download_path' do
@@ -76,11 +76,11 @@ module SilvioDownloader
         end
       end
 
-      context 'with hour_interval not filled' do  
+      context 'with hour_interval not filled' do
         subject {Configuration.new('spec/config/configuration_min.json') }
 
         it 'should parse JSON, hour interval' do
-          subject.hour_interval.should == 1
+          subject.hour_interval.should == 4
         end
       end
 

@@ -7,7 +7,7 @@
             "episode": 4
         }
     ],
-    "hour_interval": 2,
+    "hour_interval": 4,
     "download_path": "~/Downloads",
     "torrent_client": "transmission",
     "torrent_host": "192.168.1.99",
