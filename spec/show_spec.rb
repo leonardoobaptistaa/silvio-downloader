@@ -84,13 +84,13 @@ module SilvioDownloader
         )
 
         subject.find_link(requested_link).should eq (
-          'magnet:?xt=urn:btih:afeca4c382e3cf1029defe1bbd87ed9faaf84c0e&dn=Dexter+S08E04+720p+HDTV+x264-EVOLVE+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337')
+          'magnet:?xt=urn:btih:0d04c87716877e8080c3114a720a371ad8980264&dn=Dexter+S08E05+720p+HDTV+x264-IMMERSE+%5Beztv%5D&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969')
       end
 
       describe '#find_best_link_episode' do
         it "should call find_link with .org url and without 'sneak.peek' term" do
           subject.should_receive(:find_link).once.with(
-            "http://thepiratebay.org/search/Dexter S08E05 720p -(sneak.peek) -(cocain) -(-evo) -(-ind)/0/7/208"
+            "https://thepiratebay.org/search/Dexter S08E05 720p -(sneak.peek) -(cocain) -(-evo) -(-ind)/0/7/208"
           )
           subject.find_best_link_episode
         end
@@ -99,7 +99,7 @@ module SilvioDownloader
       describe '#find_best_link_seasson' do
         it "should call find_link with .org url and without 'sneak.peek' and 'cocain' terms" do
           subject.should_receive(:find_link).once.with(
-            "http://thepiratebay.org/search/Dexter S09E01 720p -(sneak.peek) -(cocain) -(-evo) -(-ind)/0/7/208"
+            "https://thepiratebay.org/search/Dexter S09E01 720p -(sneak.peek) -(cocain) -(-evo) -(-ind)/0/7/208"
           )
           subject.find_best_link_seasson
         end
