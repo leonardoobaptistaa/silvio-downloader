@@ -100,6 +100,13 @@ foreman export upstart /etc/init -a silvio -u <your-login-user>
 sudo start silvio
 ```
 
+If you installed Ruby using RVM, probally you will need this:
+
+```
+rvmsudo foreman export upstart /etc/init -a silvio -u <your-login-user>
+sudo start silvio
+```
+
 ####Mac OS X
 
 TODO - launchd scripts
