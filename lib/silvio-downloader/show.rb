@@ -45,7 +45,11 @@ module SilvioDownloader
 
     def find_link(link)
       agent = Mechanize.new
-      agent.get(link)
+      begin
+        agent.get(link)
+      rescue
+        return nil
+      end
 
       best_link = agent.page.links_with(:href => /magnet/).first
       return nil if best_link.nil?
@@ -54,11 +58,11 @@ module SilvioDownloader
     end
 
     def find_best_link_episode
-      find_link("https://thepiratebay.se/search/#{next_episode_name} -(sneak.peek) -(cocain) -(evo)/0/7/208")
+      find_link("https://thepiratebay.am/search/#{next_episode_name} -(sneak.peek) -(cocain) -(evo)/0/7/208")
     end
 
     def find_best_link_seasson
-      find_link("https://thepiratebay.se/search/#{next_seasson_name} -(sneak.peek) -(cocain) -(evo)/0/7/208")
+      find_link("https://thepiratebay.am/search/#{next_seasson_name} -(sneak.peek) -(cocain) -(evo)/0/7/208")
     end
 
     def update_to_next_seasson
