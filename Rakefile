@@ -1,5 +1,19 @@
 $LOAD_PATH.unshift( File.expand_path('../lib', __FILE__) )
 require 'silvio-downloader'
+require 'rtransmission'
+
+task :check do
+  @config = SilvioDownloader::Configuration.new('config/silvio-downloader.json')
+  @session = RTransmission::Client.session(
+    user: @config.torrent_user,
+    password: @config.torrent_password,
+    host: @config.torrent_host,
+    port: @config.torrent_port
+  )
+
+  downloader = Downloader.new(@session, RTransmission::Torrent)
+  downloader.check_new_downloads
+end
 
 namespace :shows do
   desc "Add tv serie to config file"

@@ -85,6 +85,15 @@ on ~/Downloads/The Walking Dead. For now this config cannot be changed.
 You have to open config/silvio-downloader.json file and edit it manually.
 You can set things like user, password, torrent client location and port.
 
+Single run
+----------
+
+You can run a single time using:
+
+```
+silvio check
+```
+
 Start downloading
 -----------------
 
