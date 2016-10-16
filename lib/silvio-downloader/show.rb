@@ -58,11 +58,11 @@ module SilvioDownloader
     end
 
     def find_best_link_episode
-      find_link("https://thepiratebay.se/search/#{next_episode_name} -(sneak.peek) -(cocain) -(evo)/0/7/208")
+      find_link("https://thepiratebay.se/search/#{next_episode_name} -(sneak.peek) -(cocain) -(evo) -(hevc)/0/7/208")
     end
 
     def find_best_link_seasson
-      find_link("https://thepiratebay.se/search/#{next_seasson_name} -(sneak.peek) -(cocain) -(evo)/0/7/208")
+      find_link("https://thepiratebay.se/search/#{next_seasson_name} -(sneak.peek) -(cocain) -(evo) -(hevc)/0/7/208")
     end
 
     def update_to_next_seasson
