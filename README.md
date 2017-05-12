@@ -97,12 +97,12 @@ silvio check
 Start downloading
 -----------------
 
-###Automatic downloads
+### Automatic downloads
 
 The best use of Silvio Downloader is to have it running on login by default.
 To do this, you can generate start up scrips from foreman export tool.
 
-####Ubuntu (using upstart)
+#### Ubuntu (using upstart)
 
 ```
 foreman export upstart /etc/init -a silvio -u <your-login-user>
@@ -116,11 +116,11 @@ rvmsudo foreman export upstart /etc/init -a silvio -u <your-login-user>
 sudo start silvio
 ```
 
-####Mac OS X
+#### Mac OS X
 
 TODO - launchd scripts
 
-###Manually
+### Manually
 
 Or you can start downloads manually using
 
